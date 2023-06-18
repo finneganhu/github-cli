@@ -1,4 +1,4 @@
-name: Main Branch Merge Workflow
+name: Main Branch Pull Request Workflow
 
 on:
   pull_request:
