@@ -1,7 +1,7 @@
 name: Main Branch Merge Workflow
 
 on:
-  push:
+  pull_request:
     branches:
       - main
 
