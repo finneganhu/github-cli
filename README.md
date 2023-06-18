@@ -2,7 +2,7 @@
 
 A Python command line tool that interfaces with GitHub REST API to pull recent releases and pull requests for a given public GitHub repository.
 
-# Installation
+## Installation
 
 There are 2 ways to install this tool once you cloned this repository to your local. You can either run the Python file directly, or build the application into a Docker image then run it as a Docker container. It's recommended to run it as a Docker container since it's simpler and doesn't involve any local installation. Please see the steps below for both ways of installation.
 
@@ -22,7 +22,7 @@ There are 2 ways to install this tool once you cloned this repository to your lo
 
 2. Run `docker build -t {any_image_name} .`, e.g. `docker build -t github-cli .`
 
-# Usage
+## Usage
 
 The exact command to run will depend on how you chose to install the application. Please see the steps below for usage with both installations.
 
@@ -61,7 +61,7 @@ curl-8_1_1
 curl-8_1_0
 ```
 
-# Features
+## Features
 
 **Pull any number of recent releases/pull requests**
 
@@ -79,7 +79,7 @@ The command line tool will try to pull all the results requests (default to 3). 
 
 In order to improve the efficiency and performance of the requests, for the calls to GitHub APIs, instead of pulling all the releases/pull requests for the given repository, the requests utilize the `per_page` and `page` query parameters to limit the size of the result returned.
 
-# Development Workflow
+## Development Workflow
 
 To contribute to this application, you can follow the below steps:
 
@@ -97,25 +97,10 @@ To contribute to this application, you can follow the below steps:
 
 7. Although it's not enforced, you should only merge the pull request if the workflow returns success status.
 
-# Area for Improvements
+## Area for Improvements
 
-# Note to myself
+- More unit tests to cover additional edge cases (connection timeout, invalid response content, etc.)
 
-## Development Steps
-1. Come up with overall file structure
-2. Initial implementation of functional code
-3. Add tests
-4. Review code
-    - Comments
-    - Logging
-    - Readable & maintainable
-    - Handling edge cases
-    - Performance
-        - Fast execution
-        - Handling large inputs gracefully
-5. Dockerize the app
-6. Add-ons
-    - CI/CD
-    - Repo management
-    - Monitoring
-7. Documentation
+- Implement end-to-end test to test `app/main.py` additional to the unit tests for individual command functions.
+
+- Currently the tool can only be shared through the GitHub repository. We can package the tool as a Python module and upload to PyPi, or push the Docker image to Docker Hub so that the tool can be installed more conveniently.
