@@ -1,5 +1,4 @@
 import requests
-from typing import List
 
 def get_recent_releases(repo: str, num: int) -> None:
     """
@@ -37,7 +36,7 @@ def get_recent_releases(repo: str, num: int) -> None:
             version = release['tag_name']
             print(f'{version}')
 
-def get_recent_prs(repo: str, num: int) -> List[dict]:
+def get_recent_prs(repo: str, num: int) -> None:
     """
     Retrieve most recent pull requests for the given repository
 
