@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  test-and-build:
+  run-unit-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,7 +23,3 @@ jobs:
 
       - name: Run unittest
         run: python3 -m unittest
-
-      - name: Build Docker image
-        if: ${{ success() }}
-        run: docker build -t github-cli .
