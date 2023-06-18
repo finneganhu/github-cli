@@ -23,7 +23,7 @@ class TestGitHubCommandLineTool(unittest.TestCase):
             get_recent_releases(repo, num)
 
         expected_output = f'Hey! Getting {num} most recent releases from {repo}\n...\n' \
-                          f'Here are the 3 most recet releases from {repo}:\n' \
+                          f'Here are the 3 most recent releases from {repo}:\n' \
                            'v2.0\n' \
                            'v1.1\n' \
                            'v1.0\n'
