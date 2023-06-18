@@ -1,0 +1,29 @@
+name: Main Branch Merge Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
+
+      - name: Install dependencies
+        run: pip3 install -r requirements.txt
+
+      - name: Run unittest
+        run: python3 -m unittest
+
+      - name: Build Docker image
+        if: ${{ success() }}
+        run: docker build -t github-cli .
